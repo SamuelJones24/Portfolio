@@ -1,0 +1,296 @@
+* {
+    margin: 0px;
+    font-family: 'Readex Pro', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    transition: .3s;
+}
+li {
+    list-style-type: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;
+    top:0;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    transition: .3s;
+    
+}
+.navlink {
+    display: flex;
+    justify-content: space-around;
+    flex: 80%;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0px;
+    transition: .3s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav button {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin-top: 10px;
+    height: 80%;
+    width: 50px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    transition: .3s;
+    border-radius: 10px;
+    border: 2px solid rgb(73, 34, 124);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbutton {
+    display: flex;
+    flex: 20%;
+    justify-content: center;
+}
+
+nav button:hover {
+    color: rgb(73, 34, 124);
+    transition: .3s;
+    border: 2px solid rgb(0, 0, 0);
+
+}
+nav a:hover {
+    color: rgb(18, 194, 50);
+}
+h1{
+    text-align: center;
+    font-size: 80px; 
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    margin-top: 150px;
+}
+
+#typewriter {
+    color:rgb(18, 194, 50)
+
+}
+
+.whatIAm{
+    margin-top: 30px;
+    margin-bottom: 150px;
+}
+
+.cursor {
+    color: black;
+    animation: blink 1s linear infinite;
+}
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+.dark {
+    transition: .3s;
+    background-color: #222;
+    color: rgb(230, 230, 230);
+
+}
+ .dark .cursor {
+    color: #e6e6e6;
+ }
+
+ .dark nav a{
+    color: #e6e6e6;
+ }
+
+ .dark nav a:hover{
+    color: rgb(18, 194, 50);
+    
+ }
+
+.dark nav button {
+    background-color: #222;
+    color: #e6e6e6;
+    border: 2px solid rgb(255, 202, 57);
+
+}
+
+.dark nav button:hover {
+    color: rgb(255, 202, 57);
+    border: 2px solid rgb(255, 255, 255);
+    transition: .3s;
+
+}
+
+.dark .linecolor:after {
+    background-color: rgb(100, 175, 255);
+  }
+
+.dark .aboutMe h1{
+    color: rgb(100, 175, 255)
+}
+
+.dark .picOfMe--open nav,
+.dark .picOfMe--open .aboutMe {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 400ms;
+}
+
+
+ .dark .picOfMe--open .picOfMe {
+    z-index: 69;
+    box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.55);
+    visibility: visible;
+}
+
+
+.dark .picOfMe {
+    position: absolute;
+    display: flex;
+    right: 20%;
+    overflow: hidden;
+    visibility: hidden;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+
+.dark .xtoggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 45px;
+    margin-right: 100px;
+    background: none;
+    z-index: 70;
+    font-size: 40px;
+    border: none;
+    font-style: bold;
+    color: rgb(0, 0, 0);
+}
+
+.picOfMe--open nav,
+.picOfMe--open .aboutMe {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 400ms;
+}
+
+
+.picOfMe--open .picOfMe {
+    z-index: 69;
+    box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.55);
+    visibility: visible;
+}
+
+
+.picOfMe {
+    position: absolute;
+    display: flex;
+    right: 20%;
+    overflow: hidden;
+    visibility: hidden;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+
+.xtoggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 45px;
+    margin-right: 100px;
+    background: none;
+    z-index: 70;
+    font-size: 40px;
+    border: none;
+    font-style: bold;
+    color: rgb(0, 0, 0);
+}
+
+.xtoggle:hover {
+    transition: .3s;
+    color: rgb(255, 255, 255);
+}
+
+.line {
+    position: relative;
+  }
+  
+  .line:after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
+  }
+  
+  .linecolor:after {
+    background-color: rgb(46, 72, 117)
+  }
+  
+  .line:hover:after {
+    left: 0;
+    width: 100%;
+  }
+
+  .aboutMe {
+    margin-left: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    flex: 50%;
+    margin-bottom: 100px;
+}
+
+.aboutMe h1{
+    text-align: left;
+    font-size: 60px;
+    color: rgb(46, 72, 117)
+}
+
+.aboutMeP{
+    font-size: 25px;
+    text-align:justify;
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    line-height: 2;
+}
+
+.aboutMeP a {
+    text-decoration: none;
+    color:rgb(18, 194, 50)
+
+}
+
+  
+.imgSection {
+    width: 100%;
+    height: 100%; 
+}
+
+.imgGalEl {
+    border: 5px solid white;
+}
