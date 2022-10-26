@@ -35,7 +35,7 @@ const writeLoop = async() => {
     }
 };
 
-let bg = false;
+let darkmode = false;
 
 function lightToDark() {
     var element = document.body;
@@ -50,16 +50,16 @@ function lightToDark() {
     //     document.getElementById("toggle").innerHTML = "☾";
 
     // }
-    if (bg) {
-        bg = false;
+    if (darkmode) {
+        darkmode = false;
         document.body.classList.remove("dark");
-        document.getElementById("toggle").innerHTML = "☾";
+        document.getElementById("toggle").innerHTML = '<i class="fa-solid fa-moon"></i>';
         
     }
     else {
-        bg = true;
+        darkmode = true;
         document.body.classList += "dark";
-        document.getElementById("toggle").innerHTML = "☀";
+        document.getElementById("toggle").innerHTML = '<i class="fa-regular fa-sun"></i>';
     }
 
 }
@@ -78,5 +78,36 @@ function picToggle() {
     }
 
 }
+const appearOptions = {
+    threshold: 0, rootMargin: "0px 0px -200px 0px"
+};
 
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOnScroll = new IntersectionObserver
+(function(
+    entries,
+     appearOnScroll
+) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        }
+        else{
+            entry.target.classList.add('appear');
+            appearOnScroll.unobserve('entry.target');
+        }
+    });
+},
+ appearOptions);
+
+ faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+ });
+
+
+ const sliders = document.querySelectorAll('.slide-in');
+sliders.forEach(slider => {
+    appearOnScroll.observe(slider);
+})
 writeLoop();

@@ -7,6 +7,7 @@ html {
 }
 body {
     transition: .3s;
+    overflow-x: hidden;
 }
 li {
     list-style-type: none;
@@ -41,9 +42,13 @@ nav a{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+nav a:active {
+    transform: scale(.9);
+}
+
 nav button {
     color: rgb(0, 0, 0);
-    font-size: 30px;
+    font-size: 28px;
     margin-top: 10px;
     height: 80%;
     width: 50px;
@@ -53,6 +58,10 @@ nav button {
     border-radius: 10px;
     border: 2px solid rgb(73, 34, 124);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav button:active {
+    transform: scale(.9)
 }
 
 .navbutton {
@@ -146,91 +155,10 @@ h1{
 .dark .aboutMe h1{
     color: rgb(100, 175, 255)
 }
-
-.dark .picOfMe--open nav,
-.dark .picOfMe--open .aboutMe {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 400ms;
+.dark .Skills h1{
+    color: rgb(100, 175, 255)
 }
 
-
- .dark .picOfMe--open .picOfMe {
-    z-index: 69;
-    box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.55);
-    visibility: visible;
-}
-
-
-.dark .picOfMe {
-    position: absolute;
-    display: flex;
-    right: 20%;
-    overflow: hidden;
-    visibility: hidden;
-    border-radius: 100%;
-    z-index: -1;
-}
-
-
-.dark .xtoggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 45px;
-    margin-right: 100px;
-    background: none;
-    z-index: 70;
-    font-size: 40px;
-    border: none;
-    font-style: bold;
-    color: rgb(0, 0, 0);
-}
-
-.picOfMe--open nav,
-.picOfMe--open .aboutMe {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 400ms;
-}
-
-
-.picOfMe--open .picOfMe {
-    z-index: 69;
-    box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.55);
-    visibility: visible;
-}
-
-
-.picOfMe {
-    position: absolute;
-    display: flex;
-    right: 20%;
-    overflow: hidden;
-    visibility: hidden;
-    border-radius: 100%;
-    z-index: -1;
-}
-
-
-.xtoggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 45px;
-    margin-right: 100px;
-    background: none;
-    z-index: 70;
-    font-size: 40px;
-    border: none;
-    font-style: bold;
-    color: rgb(0, 0, 0);
-}
-
-.xtoggle:hover {
-    transition: .3s;
-    color: rgb(255, 255, 255);
-}
 
 .line {
     position: relative;
@@ -293,4 +221,63 @@ h1{
 
 .imgGalEl {
     border: 5px solid white;
+}
+
+.Skills {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: end;
+    margin-right: 50px;
+}
+
+.Skills h1{
+    text-align: right;
+    font-size: 60px;
+    color: rgb(46, 72, 117);
+    margin-right: 20px;
+
+}
+
+.SkillsP {
+    font-size: 25px;
+    text-align:justify;
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    line-height: 2;
+    align-self: flex-end;
+    
+}
+
+.Skills a {
+    text-decoration: none;
+    color:rgb(18, 194, 50)
+
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.left{
+    transform: translateX(-50%);
+}
+.right{
+    transform: translateX(50%);
+}
+
+.left, .right {
+    transition: opacity 250ms ease-in,
+     transform 600ms ease-in;
+    opacity: 0;
+}
+
+.left.appear, .right.appear {
+    transform: translateX(0);
+    opacity: 1;
 }
