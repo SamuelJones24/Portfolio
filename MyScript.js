@@ -3,7 +3,7 @@ function sleep(ms) {
     }
 const phrase = ["Programmer", "Front-end Developer", "Back-end Developer", "Tennis Player"];
 
-const el = document.getElementById("typewriter");
+const el = document.getElementById("typewriter1");
 
 let sleepTime = 100;
 
@@ -35,34 +35,54 @@ const writeLoop = async() => {
     }
 };
 
-let darkmode = false;
-
-function lightToDark() {
-    var element = document.body;
-    // element.classList.toggle("dark");
-        
-
-    // if (document.getElementById("toggle").innerHTML == "☾"){
-    //     document.getElementById("toggle").innerHTML = "☀";
-    
-    // }
-    // else {
-    //     document.getElementById("toggle").innerHTML = "☾";
-
-    // }
-    if (darkmode) {
-        darkmode = false;
-        document.body.classList.remove("dark");
-        document.getElementById("toggle").innerHTML = '<i class="fa-solid fa-moon"></i>';
-        
-    }
-    else {
-        darkmode = true;
-        document.body.classList += "dark";
-        document.getElementById("toggle").innerHTML = '<i class="fa-regular fa-sun"></i>';
-    }
+if (localStorage.getItem("darkMode") === null) {
+    localStorage.setItem("darkMode", "false");
 
 }
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+    document.getElementById("toggle").innerHTML = '<i class="fa-regular fa-sun"></i>';
+
+}
+
+const check = document
+    .getElementById("toggle")
+    .addEventListener("click", function () {
+        if (localStorage.getItem("darkMode") === "false") {
+
+            localStorage.setItem("darkMode", "true");
+            document.body.classList += "dark";
+            document.getElementById("toggle").innerHTML = '<i class="fa-regular fa-sun"></i>';
+            
+        
+        } else {
+            localStorage.setItem("darkMode", "false");
+            document.body.classList.remove("dark");
+            document.getElementById("toggle").innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+    });
+
+
+// let darkmode = false;
+
+// function lightToDark() {
+//     var element = document.body;
+//     // element.classList.toggle("dark");
+
+//     // }
+//     if (darkmode) {
+//         darkmode = false;
+//         document.body.classList.remove("dark");
+//         document.getElementById("toggle").innerHTML = '<i class="fa-solid fa-moon"></i>';
+        
+//     }
+//     else {
+//         darkmode = true;
+//         document.body.classList += "dark";
+//         document.getElementById("toggle").innerHTML = '<i class="fa-regular fa-sun"></i>';
+//     }
+
+// }
 
 let picOpen = false;
 
