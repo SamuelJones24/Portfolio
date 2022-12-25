@@ -35,6 +35,9 @@ const writeLoop = async() => {
     }
 };
 
+
+
+
 if (localStorage.getItem("darkMode") === null) {
     localStorage.setItem("darkMode", "false");
 
@@ -131,3 +134,34 @@ sliders.forEach(slider => {
     appearOnScroll.observe(slider);
 })
 writeLoop();
+
+
+let password = 'raxeyavezpvmpkgk';
+
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+
+
+function SendMail() {
+    var params = {
+        from_name : document.getElementById("input_name").value,
+        email_id : document.getElementById("input_email").value,
+        message : document.getElementById("input_comment").value
+    }
+
+    if (validateEmail(params.email_id))
+    {
+        emailjs.send("service_3aibw7p", "template_juprt6e", params).then(function (res) {
+        alert("Success!");
+
+    })
+    
+    }
+    else {
+        alert("Invalid Email Address...");
+    }
+    
+}

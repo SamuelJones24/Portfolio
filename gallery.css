@@ -1,0 +1,53 @@
+.gallery ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1vmin;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.gallery li {
+    flex-grow: 1;
+    list-style: none;
+    margin: 1vmin;
+    display: flex;
+    transition: .3s;
+    height: 50vh;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+
+.gallery li:active {
+    transform: scale(1.15);
+}
+
+.welcome {
+    margin-top: 180px;
+    margin-bottom: 150px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.portrait {
+    height: 560px;
+    width: 350px;
+    background-color: rgb(175, 139, 139);
+}
+
+.square {
+    height: 420px;
+    width: 420px;
+    background-color: rgb(139, 146, 175);
+}
+
+.landscape {
+    height: 350px;
+    width: 560px;
+    background-color: rgb(139, 175, 141);
+}

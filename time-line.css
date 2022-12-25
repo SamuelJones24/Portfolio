@@ -1,0 +1,113 @@
+.welcome {
+    margin-top: 180px;
+    margin-bottom: 250px;
+}
+
+span {
+    color: rgb(18, 194, 50)
+
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, time {
+  color: white;
+}
+
+.dark p, .dark time {
+  color: black
+}
+
+ul {
+  padding: 50px 0;
+}
+
+ul li {
+  position:relative;
+  list-style-type: none;
+  width: 6px;
+  background-color: #222;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+ul li::after {
+  background: #222;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  }
+
+.dark ul li, .dark ul li::after{
+  background: white
+}
+
+
+.dark ul li div{
+  background: rgb(100, 175, 255);
+}
+
+
+ul li div{
+  position: relative;
+  width: 400px;
+  padding: 15px;
+  border-radius: 5px;
+  bottom: 0;
+  background: rgb(46, 72, 117);
+}
+
+ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+ul li:nth-child(even) div {
+  left: -445px;
+}
+
+time {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+ul li.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  ul li div {
+    width: 250px;
+  }
+  ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
