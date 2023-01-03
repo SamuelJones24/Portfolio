@@ -66,6 +66,8 @@ const check = document
     });
 
 
+document.body.style.maxWidth = parseInt(window.innerWidth);
+
 // let darkmode = false;
 
 // function lightToDark() {
@@ -101,10 +103,31 @@ function picToggle() {
     }
 
 }
-const appearOptions = {
-    threshold: 0, rootMargin: "0px 0px -200px 0px"
-};
+var w = parseInt(window.innerWidth);
 
+
+if (w >850 ){   
+    var appearOptions = {
+        threshold: 0, rootMargin: "0px 0px -200px 0px"
+    };
+}
+
+else {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            var skillChange = document.querySelector(".Skills");
+            skillChange.classList.remove("left");
+
+            var appearOptions = {
+                threshold: 0, rootMargin: "0px 0px -75px 0px"
+            };
+    }
+    else {
+        
+        var appearOptions = {
+            threshold: 0, rootMargin: "0px 0px -125px 0px"
+        };
+    }
+}
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOnScroll = new IntersectionObserver

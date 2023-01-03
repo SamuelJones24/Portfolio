@@ -51,3 +51,19 @@ img {
     width: 560px;
     background-color: rgb(139, 175, 141);
 }
+
+@media screen and (max-width: 850px) {
+    .gallery li {
+        height: 38vh;
+    }
+
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    .gallery li {
+        height: 29vh;
+    }
+    
+}
