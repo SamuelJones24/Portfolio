@@ -34,23 +34,6 @@ img {
     border-radius: 5px;
 }
 
-.portrait {
-    height: 560px;
-    width: 350px;
-    background-color: rgb(175, 139, 139);
-}
-
-.square {
-    height: 420px;
-    width: 420px;
-    background-color: rgb(139, 146, 175);
-}
-
-.landscape {
-    height: 350px;
-    width: 560px;
-    background-color: rgb(139, 175, 141);
-}
 
 @media screen and (max-width: 850px) {
     .gallery li {

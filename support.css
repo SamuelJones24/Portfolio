@@ -71,6 +71,7 @@ nav button:active {
     display: flex;
     flex: 20%;
     justify-content: center;
+
 }
 
 nav button:hover {
@@ -78,9 +79,13 @@ nav button:hover {
     transition: .3s;
     border: 2px solid rgb(0, 0, 0);
 
+
 }
+
+
 nav a:hover {
     color: rgb(18, 194, 50);
+
 }
 h1{
     text-align: center;
